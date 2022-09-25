@@ -58,7 +58,7 @@ const Home: NextPage = () => {
 
         <div className={styles.grid}>
           <a
-            href="https://github.com/colbyfayock/next-leaflet-starter"
+            href="https://github.com/kbu715/next-leaflet-ts-starter"
             target="_blank"
             className={styles.card}
             rel="noreferrer"
