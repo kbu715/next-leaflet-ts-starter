@@ -1,11 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import ShowMap from "../components/map";
 import styles from "../styles/Home.module.css";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
+  const [icon, setIcon] = useState("car");
+
   return (
     <div className={styles.container}>
       <Head>
@@ -19,9 +22,34 @@ const Home: NextPage = () => {
 
         <Link href="/full">
           <a>
-            <ShowMap />
+            <ShowMap icon={icon} />
           </a>
         </Link>
+
+        <h2>Choose your icon</h2>
+
+        <div>
+          <Image
+            src="/Car.svg"
+            alt="car"
+            width={"50px"}
+            height={"50px"}
+            style={{
+              cursor: "pointer",
+            }}
+            onClick={() => setIcon("car")}
+          />
+          <Image
+            src="/Arrow.svg"
+            alt="car"
+            width={"50px"}
+            height={"50px"}
+            style={{
+              cursor: "pointer",
+            }}
+            onClick={() => setIcon("arrow")}
+          />
+        </div>
 
         <p className={styles.description}>
           Get started by editing{" "}
